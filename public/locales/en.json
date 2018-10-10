@@ -1,4 +1,9 @@
 {
 	"Hello": "Hello",
-	"Hello %s, how are you today?": "Hello %s, how are you today?"
+	"Hello %s, how are you today?": "Hello %s, how are you today?",
+	"field is duplicate": "field is duplicate",
+	"Some error occurred": "Some error occurred",
+	"email is duplicate": "email is duplicate",
+	"Your password cannot be blank.": "Your password cannot be blank.",
+	"Your email cannot be blank.": "Your email cannot be blank."
 }

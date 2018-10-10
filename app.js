@@ -7,14 +7,19 @@ var logger = require('morgan');
 /*********/
 var multer  = require('multer');
 
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, path.join(__dirname, 'public','tmp'))
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now()+path.extname(file.originalname))
+  }
+})
+
 global.upload = multer({ 
-	dest: 'public/tmp',
-	filename: function ( req, file, cb ) {
-        cb(null, Date.now()+path.extname(file.originalname));
-        //cb( null, file.originalname );
-        //cb(null, Date.now() + path.extname(file.originalname)); //Appending extension
-    } 
+	storage : storage  
 });
+global.bcrypt = require('bcrypt');
 global.locale = require('i18n');
 locale.configure({
     locales:['en', 'de'],
